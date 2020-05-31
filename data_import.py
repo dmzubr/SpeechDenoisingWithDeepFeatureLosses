@@ -13,7 +13,7 @@ def load_full_data_list(datafolder='dataset'):#check change path names
         dataset[setname] = {}
         datafolders[setname] = datafolder + '/' + setname + 'set'
 
-    print "Loading files..."
+    print("Loading files...")
     for setname in sets:
         foldername = datafolders[setname]
 
@@ -65,7 +65,7 @@ def load_noisy_data_list(valfolder = ''):#check change path names
     dataset = {'val': {}}
     datafolders = {'val': valfolder}
 
-    print "Loading files..."
+    print("Loading files...")
     for setname in sets:
         foldername = datafolders[setname]
 

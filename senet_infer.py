@@ -9,18 +9,18 @@ modfolder = "models"
 try:
     opts, args = getopt.getopt(sys.argv[1:],"hd:m:",["ifolder=,modelfolder="])
 except getopt.GetoptError:
-    print 'Usage: python senet_infer.py -d <inputfolder> -m <modelfolder>'
+    print('Usage: python senet_infer.py -d <inputfolder> -m <modelfolder>')
     sys.exit(2)
 for opt, arg in opts:
     if opt == '-h':
-        print 'Usage: pythonsenet_infer.py -d <inputfolder> -m <modelfolder>'
+        print('Usage: pythonsenet_infer.py -d <inputfolder> -m <modelfolder>')
         sys.exit()
     elif opt in ("-d", "--inputfolder"):
         valfolder = arg
     elif opt in ("-m", "--modelfolder"):
         modfolder = arg
-print 'Input folder is "' + valfolder + '/"'
-print 'Model folder is "' + modfolder + '/"'
+print('Input folder is "' + valfolder + '/"')
+print( 'Model folder is "' + modfolder + '/"')
 
 if valfolder[-1] == '/':
     valfolder = valfolder[:-1]
@@ -54,11 +54,11 @@ config=tf.ConfigProto()
 config.gpu_options.allow_growth=True
 sess=tf.Session(config=config)
 
-print "Config ready"
+print("Config ready")
 
 sess.run(tf.global_variables_initializer())
 
-print "Session initialized"
+print("Session initialized")
 
 saver = tf.train.Saver([var for var in tf.trainable_variables() if var.name.startswith("se_")])
 saver.restore(sess, "./%s/se_model.ckpt" % modfolder)

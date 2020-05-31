@@ -1,3 +1,6 @@
 *.pyc
 *.zip
 *.wav
+.idea/
+config.yml
+test_recs/

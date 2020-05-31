@@ -1,0 +1,12 @@
+# ==================================================================
+# module list
+# ------------------------------------------------------------------
+# ffmpeg libsndfile1 sox libsox-fmt-all              	(apt)
+# pyyaml pika requests pydub numpy scipy tqdm         	(pip)
+# ==================================================================
+
+FROM tensorflow/tensorflow:1.15.2-gpu-py3
+
+RUN apt update
+RUN apt install -y ffmpeg libsndfile1 sox libsox-fmt-all
+RUN pip install pyyaml pika requests pydub numpy scipy tqdm boto3

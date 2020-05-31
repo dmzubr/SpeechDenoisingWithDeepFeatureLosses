@@ -1,0 +1,10 @@
+exchange_name: easy_net_q_rpc
+amqp_host: host
+amqp_port: 99999
+user_name: someuser
+password: somepassword
+
+ya_cloud_storage:
+  bucket_name: bucket-name
+  aws_access_key_id: aws_access_key_id
+  aws_secret_access_key: aws_secret_access_key
